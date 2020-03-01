@@ -1,0 +1,10 @@
+zuul:
+  # pass cookies downstream using the sensitive-headers property
+  sensitive-headers:
+  routes:
+    ui:
+      path: /ui/**
+      url: http://localhost:8081/ui
+    resource:
+      path: /resource/**
+      url: http://localhost:9000/resource
