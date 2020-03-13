@@ -5,6 +5,9 @@ zuul:
     ui:
       path: /ui/**
       url: http://localhost:8081/ui
+    admin:
+      path: /admin/**
+      url: http://localhost:8082/admin
     resource:
       path: /resource/**
       url: http://localhost:9000/resource

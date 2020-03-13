@@ -9,7 +9,7 @@
     "lint": "ng lint",
     "e2e": "ng e2e",
     
-    "buildForUIWeb": "ng build --outputPath=\"../ui/src/main/resources/static\" --deleteOutputPath=true --baseHref=/ui/"
+    "buildForUIWeb": "ng build --outputPath=\"../ui/src/main/resources/static\" --deleteOutputPath=true --baseHref=\"http://localhost:8081/ui/\""
   },
   "private": true,
   "dependencies": {

@@ -7,7 +7,9 @@
     "build": "ng build",
     "test": "ng test",
     "lint": "ng lint",
-    "e2e": "ng e2e"
+    "e2e": "ng e2e",
+
+    "buildForAdminWeb": "ng build --outputPath=\"../admin/src/main/resources/static\" --deleteOutputPath=true --baseHref=\"http://localhost:8082/admin/\""
   },
   "private": true,
   "dependencies": {
