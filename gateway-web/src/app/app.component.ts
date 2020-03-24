@@ -18,24 +18,38 @@ import { catchError, finalize } from 'rxjs/operators';
 export class AppComponent {
   title = 'gateway-web';
   authenticated = false;
+  user: any;
+  admin: boolean;
 
   constructor(private app: AppService, private http: HttpClient, private router: Router) {
     //this.app.authenticate(undefined, undefined);
-    this.authenticated = this.app.authenticated;
+    this.updateProperties();
   }
 
+  // logout() {
+  //   this.http.post('logout', {}).pipe(
+  //     catchError((err, caught) => {
+  //       // TODO - Handle error
+  //       console.error(">>>Error: " + err);
+  //       throw err;
+  //     }),
+  //     finalize(() => {
+  //       // Forcely logout
+  //       this.authenticated = false;
+  //       //this.router.navigateByUrl('/');
+  //     })
+  //   ).subscribe();
+  // }
+
   logout() {
-    this.http.post('logout', {}).pipe(
-      catchError((err, caught) => {
-        // TODO - Handle error
-        console.error(">>>Error: " + err);
-        throw err;
-      }),
-      finalize(() => {
-        // Forcely logout
-        this.authenticated = false;
-        //this.router.navigateByUrl('/');
-      })
-    ).subscribe();
+    this.app.logout();
+    this.updateProperties();
   }
+
+  updateProperties() {
+    this.authenticated = this.app.authenticated;
+    this.user = this.app.user;
+    this.admin = this.app.admin;
+  }
+
 }
