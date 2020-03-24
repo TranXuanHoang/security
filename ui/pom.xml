@@ -111,7 +111,7 @@
                     <!-- Build the app (including build the Angular app and set
                          the generated JavaScript files distribution
                          "outputPath": "src/main/resources/static") -->
-                    <execution>
+                    <!-- <execution>
                         <id>npm-buildForUIWeb</id>
                         <goals>
                             <goal>npm</goal>
@@ -119,7 +119,7 @@
                         <configuration>
                             <arguments>run-script buildForUIWeb</arguments>
                         </configuration>
-                    </execution>
+                    </execution> -->
                     <!-- Uncomment the following to run e2e test
                     <execution>
                         <id>npm-test</id>

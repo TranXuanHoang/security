@@ -10,6 +10,7 @@ import { AppService } from '../app.service';
 })
 export class LoginComponent implements OnInit {
   authenticated: boolean;
+  admin: boolean;
   credentials: object;
 
   constructor(private app: AppService, private http: HttpClient, private router: Router) { }
@@ -32,6 +33,7 @@ export class LoginComponent implements OnInit {
     });
 
     this.authenticated = this.app.authenticated;
+    this.admin = this.app.admin;
     //return false;
   }
 

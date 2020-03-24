@@ -8,11 +8,15 @@ import { AppService } from '../app.service';
 })
 export class HomeComponent implements OnInit {
   authenticated: boolean;
+  user: any;
+  admin: boolean;
 
   constructor(private app: AppService) { }
 
   ngOnInit() {
     this.authenticated = this.app.authenticated;
+    this.user = this.app.user;
+    this.admin = this.app.admin;
   }
 
 }
